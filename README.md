@@ -19,7 +19,7 @@ Além disso, sou jovem aprendiz na **Coplana**, atuando na área de administraç
 
 ## 🔹 Projetos
 
-### [Portifolio Pessoal](https://github.com/Phtsilva/PyCalculator)  
+### [Portifolio Pessoal](https://github.com/Phtsilva/Portifolio)  
 Um projeto que reúne meus trabalhos e experiências na área de desenvolvimento web
 
 ### [Portifolio Alura](https://github.com/Phtsilva/portifolio-alura)  
