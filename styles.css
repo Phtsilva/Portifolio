@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ==========================
+   Variáveis Globais
+========================== */
+:root{
+    --cor-background: #cf974d;
+    --cor-texto-principal: #000000;
+    --cor-texto-secundaria: #d1d1d1;
+    --cor-texto-descricao: #494949;
+    --font-principal: 'Gugi';
+    --font-secundaria: 'Montserrat', sans-serif;
+}
+
+/* ==========================
+   Reset e HTML
+========================== */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-background);
+    font-family: var(--font-secundaria);
+}
+
+/* ==========================
+   Navbar
+========================== */
+.container__navbar{
+    background: #b67d3f;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+    display: flex;
+    gap: 15px;
+}
+
+.menu li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: var(--font-principal);
+}
+
+.menu__link:hover {
+    border-bottom: 2px solid #ffffff; 
+}
+
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: #b67d3f;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-toggle:checked ~ .menu {
+        display: flex;
+    }
+}
+
+/* ==========================
+   Main / About
+========================== */
+.container__main {
+    padding: 5% 0;
+    text-align: center;
+}
+
+.container__main__image {
+    width: 20ch;
+    height: 20ch;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin: 40px auto 0 auto;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 1);
+}
+
+.container__main_titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 2%;
+}
+
+.container__main__title_img {
+    width: 2rem;
+    height: 2rem;
+    transform: translateY(-6%);
+}
+
+.container__main__dev {
+    color: var(--cor-texto-secundaria);
+    font-family: var(--font-secundaria);
+    font-size: medium;
+    margin-top: 10px;
+}
+
+.container__main__dev__descricao {
+    font-family: var(--font-secundaria);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px 25px;
+    background-color: white;
+    border-radius: 20px;
+    color: #3b3b3b;
+    line-height: 1.6;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container__main__dev__descricao:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    color: #1a1a1a;
+}
+
+@media (max-width: 768px){
+    .container__main__dev__descricao {
+        font-size: 0.95rem;
+        padding: 18px 20px;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px){
+    .container__main__dev__descricao {
+        font-size: 0.9rem;
+        padding: 15px;
+        max-width: 95%;
+        border-radius: 15px;
+    }
+}
+
+/* ==========================
+   Skills / Carousel
+========================== */
+.container__skills {
+    padding: 2% 0;
+}
+
+.container__skills__title {
+    font-family: var(--font-principal);
+    font-size: 2rem;
+    color: var(--cor-texto-principal);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.skills-carousel {
+    width: 100%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 15px;
+    padding: 15px;
+    background-color: #f5f5f5;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    width: calc(200%);
+    animation: scrolls 25s linear infinite;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 12px;
+}
+
+.skill-card h3 {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 8px;
+    color: #a8a8a8;
+    text-align: center;
+}
+
+.skill-card:hover {
+    transform: scale(1.15);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+@keyframes scrolls {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* ==========================
+   Projetos
+========================== */
+.container__projetos {
+    padding: 50px 20px;
+    background-color: #f5f5f5;
+    text-align: center;
+}
+
+.container__projetos__title {
+    font-family: var(--font-principal);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.container__projetos__descricao {
+    font-family: var(--font-secundaria);
+    font-size: 1rem;
+    color: #555;
+    text-transform: uppercase;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 600px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    font-family: var(--font-principal);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-family: var(--font-secundaria);
+    font-size: 0.95rem;
+    color: #333;
+    line-height: 1.4;
+}
+
+.project-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* ==========================
+   Contato
+========================== */
+.contato {
+    text-align: center;
+    padding: 50px 20px;
+    background: #111;
+    color: #fff;
+}
+
+.contato h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.contato p {
+    font-size: 1rem;
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #222;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.social-icons a img {
+    width: 24px;
+    height: 24px;
+}
+
+.social-icons a:hover {
+    background: #ffffff;
+    transform: scale(1.1);
+}
+
+.email-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.email-form input {
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    width: 250px;
+    text-align: center;
+    outline: none;
+    background: #333;
+    color: #aaa;
+}
+
+.email-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background: #ff4d4d;
+    color: #fff;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* ==========================
+   Media Queries Gerais
+========================== */
+@media (max-width: 1024px){
+    .carousel-track { gap: 25px; }
+    .skill-card { min-width: 140px; padding: 18px; }
+    .skill-card img { width: 60px; height: 60px; }
+    .skill-card h3 { font-size: 1rem; }
+}
+
+@media (max-width: 768px){
+    .carousel-track { gap: 20px; }
+    .skill-card { min-width: 120px; padding: 15px; }
+    .skill-card img { width: 50px; height: 50px; }
+    .skill-card h3 { font-size: 0.9rem; }
+    .projects-grid { max-width: 90%; }
+}
+
+@media (max-width: 480px){
+    .container__skills__title,
+    .container__projetos__title { font-size: 1.8rem; }
+    .skill-card { min-width: 100px; padding: 12px; }
+    .skill-card img { width: 40px; height: 40px; }
+    .skill-card h3 { font-size: 0.8rem; }
+    .container__projetos__descricao { font-size: 0.9rem; }
+    .social-icons a { width: 45px; height: 45px; }
+    .social-icons a img { width: 22px; height: 22px; }
+}
