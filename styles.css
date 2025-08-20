@@ -171,6 +171,7 @@ body {
     }
 }
 
+
 /* ==========================
    Skills / Carousel
 ========================== */
@@ -202,6 +203,7 @@ body {
     width: calc(200%);
     animation: scrolls 25s linear infinite;
 }
+
 
 .skill-card {
     display: flex;
@@ -242,7 +244,7 @@ body {
 }
 
 /* ==========================
-   Projetos
+   Projetos 
 ========================== */
 .container__projetos {
     padding: 50px 20px;
